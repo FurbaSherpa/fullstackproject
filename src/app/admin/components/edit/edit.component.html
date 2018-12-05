@@ -1,3 +1,41 @@
 <p>
-  edit works!
-</p>
+    add works!
+  </p>
+  <div>
+    <br>
+    <mat-card>
+
+      <section class="mat-typography">
+        <h3>Add A New Player</h3>
+      </section>
+
+      <form [formGroup]="addForm" class="add-form">
+
+        <mat-form-field class="field-full-width">
+          <input matInput formControlName="username" placeholder="username" #username>
+        </mat-form-field>
+
+        <mat-form-field class="field-full-width">
+            <input matInput formControlName="rank" placeholder="rank" #rank>
+        </mat-form-field>
+
+        <mat-form-field class="field-full-width">
+            <input matInput formControlName="score" placeholder="score"  #score>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+            <input matInput formControlName="time" placeholder="time" #time>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+            <input matInput formControlName="favorite" placeholder="favorite" #favorite>
+        </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <mat-select placeholder="Customer" formControlName="customer" #customer>
+                      <mat-option value="customer">Customer</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+        <br>
+        <button mat-raised-button color="accent" routerLink="/add">Update</button>
+        <button mat-raised-button color="accent" routerLink="/adminplayers">Back</button>
+      </form>
+    </mat-card>
+  </div>

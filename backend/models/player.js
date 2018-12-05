@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // ***** Player Model Schema *****
 const playerSchema = mongoose.Schema({
-    userName: String,
+    username: String,
     rank: String,
     score: String,
     time: String,

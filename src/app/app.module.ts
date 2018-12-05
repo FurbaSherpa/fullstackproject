@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule,
+   MatIconModule, MatButtonModule, MatCardModule, MatTableModule, MatDividerModule, MatSnackBarModule
+   } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,12 +42,21 @@ import { PlayersService } from './players.service'
     MatToolbarModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    ReactiveFormsModule,
     MatButtonToggleModule,
     UserRoutingModule,
     AdminRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule, 
+    MatOptionModule, 
+    MatSelectModule,
+    MatIconModule, 
+    MatButtonModule, 
+    MatCardModule, 
+    MatTableModule, 
+    MatDividerModule, 
+    MatSnackBarModule
   ],
   providers: [
     PlayersService],

@@ -6,11 +6,12 @@ const app = express();
 
 // *********** Include the Api routes ***********
 const playerRoutes = require("./routes/players");
+const gameRoutes = require("./routes/games");
 
 // *********** Connect to Mongo  npm i -g nodemon ***********
 console.log('Attempting to connect to mongoose');
 
-mongoose.connect('mongodb://admin:admin123@ds123664.mlab.com:23664/full_stack')
+mongoose.connect('mongodb://Testuser:password1@ds038888.mlab.com:38888/gamedb')//'mongodb://admin:admin123@ds123664.mlab.com:23664/full_stack'
   .then(() => {
     console.log('Connected to Mongo database!');
   })
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 
 // ******** Setup the Api routes ***********
 app.use("/playerRoutes", playerRoutes);
+app.use("/gameRoutes", gameRoutes);
 
 module.exports = app;
