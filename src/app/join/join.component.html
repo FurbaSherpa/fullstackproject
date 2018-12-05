@@ -1,0 +1,36 @@
+<div>
+  <br>
+  <mat-card>
+
+    <section class="mat-typography">
+      <h3>Join Player's Game</h3>
+    </section>
+
+    <form [formGroup]="updateForm" class="edit-form">
+
+      <mat-form-field class="field-full-width">
+        <input matInput formControlName="username" placeholder="username" #username>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+          <input matInput formControlName="rank" placeholder="rank" #rank>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+          <input matInput formControlName="score" placeholder="score"  #score>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+          <input matInput formControlName="time" placeholder="time" #time>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+          <input matInput formControlName="favorite" placeholder="favorite" #favorite>
+      </mat-form-field>
+
+      <br>
+      <button mat-raised-button color="accent" mat-raised-button color="primary">Join</button>
+      <button type="button" mat-raised-button color="accent" routerLink="/user">Back</button>
+    </form>
+  </mat-card>
+</div>

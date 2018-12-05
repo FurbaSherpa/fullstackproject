@@ -23,7 +23,7 @@ import { AddComponent } from './admin/components/add/add.component';
 import { AdminplayersComponent } from './admin/components/adminplayers/adminplayers.component';
 import { AdmingamesComponent } from './admin/components/admingames/admingames.component';
 import { PlayersService } from './players.service';
-import { JoinComponent } from './user/components/join/join.component'
+import { JoinComponent } from './join/join.component';
 
 @NgModule({
   declarations: [

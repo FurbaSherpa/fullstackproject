@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayersService} from '../../../players.service';
-import { Player } from '../../../players.model'; 
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { MatSnackBar } from '@angular/material';
 
-import { Router, ActivatedRoute } from '@angular/router';
-
+import { Player } from '../../../players.model';
+import { PlayersService} from '../../../players.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -19,21 +18,8 @@ export class EditComponent implements OnInit {
   updateForm: FormGroup;
 
   constructor(private PlayersService: PlayersService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb : FormBuilder) {
-    this.editForm();
+    this.addForm();
    }
-
-   editForm(){
-    this.updateForm = this.fb.group({
-      username: ['', Validators.required],
-      rank: '',
-      score:'',
-      time: '',
-      favorite: '',
-      customer: '',
-      status: ''
-    });
-   }
-
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params.id;
@@ -49,6 +35,20 @@ export class EditComponent implements OnInit {
       });
     });
   }
+
+  addForm(){
+    this.updateForm = this.fb.group({
+      username: ['', Validators.required],
+      rank: '',
+      score:'',
+      time: '',
+      favorite: '',
+      customer: '',
+      status: ''
+    });
+   }
+
+
   updatePlayers(username, rank, score, time, favorite, customer, status){
     this.PlayersService.updatePlayers(this.id, username, rank, score, time, favorite, customer, status).subscribe(() => {
       this.snackBar.open('Player updated sucessfully', 'OK', {

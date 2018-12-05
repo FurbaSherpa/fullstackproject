@@ -39,7 +39,7 @@ export class AdminplayersComponent implements OnInit {
   deletePlayer(id){
     this.playersService.deletePlayer(id).subscribe(()=>{
       this.fetchPlayers();
-    })
+    });
   }
 
 }

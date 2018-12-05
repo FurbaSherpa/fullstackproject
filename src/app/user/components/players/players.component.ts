@@ -47,7 +47,7 @@ export class PlayersComponent implements OnInit {
   }
 
   joinPlayer(id){
-    this.router.navigate([`/update/${id}`]);
+    this.router.navigate([`/join/${id}`]);
   }
 
 
