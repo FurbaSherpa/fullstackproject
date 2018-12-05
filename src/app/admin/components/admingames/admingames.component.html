@@ -6,3 +6,51 @@
   <mat-button-toggle routerLink="/admingames">Games</mat-button-toggle>
 </mat-button-toggle-group>
 <router-outlet></router-outlet>
+
+<div>
+  <br>
+  <mat-card>
+    <table mat-table [dataSource]="games">
+
+      <ng-container matColumnDef="Title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element">{{element.Title}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Platform">
+          <th mat-header-cell *matHeaderCellDef>Platform</th>
+          <td mat-cell *matCellDef="let element">{{element.Platform}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Genre">
+          <th mat-header-cell *matHeaderCellDef>Genre</th>
+          <td mat-cell *matCellDef="let element">{{element.Genre}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Rating">
+          <th mat-header-cell *matHeaderCellDef>Rating</th>
+          <td mat-cell *matCellDef="let element">{{element.Rating}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Publisher">
+          <th mat-header-cell *matHeaderCellDef>Publisher</th>
+          <td mat-cell *matCellDef="let element">{{element.Publisher}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Release">
+          <th mat-header-cell *matHeaderCellDef>Release</th>
+          <td mat-cell *matCellDef="let element">{{element.Release}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">{{element.Status}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </mat-card>
+</div>
+

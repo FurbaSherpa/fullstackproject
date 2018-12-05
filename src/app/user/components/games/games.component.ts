@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
-
-import { Game } from '../../../games.model';
-import { GamesService } from '../../../games.service';
+import { Game } from '../../../game';
+import { GAMES } from '../../../mock-games';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-games',
@@ -10,23 +10,10 @@ import { GamesService } from '../../../games.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-
-  games: Game[];
-  displayedColumns = ['Title', 'Platform', 'Genre', 'Rating', 'Publisher', 'Release', 'Status','actions'];
-  constructor(private GamesService: GamesService, private router: Router) { }
+  games = GAMES;
+  displayedColumns = ['Title', 'Platform', 'Genre', 'Rating', 'Publisher', 'Release', 'Status'];
+  constructor() { }
 
   ngOnInit() {
-    this.fetchGames();
   }
-
-  fetchGames(){
-    this.GamesService
-      .getGames()
-      .subscribe((data: Game[]) => {
-        this.games = data;
-        console.log('Data requested....');
-        console.log(this.games);
-      });
-
-}
 }

@@ -26,11 +26,11 @@ router.get('find/:id', (req, res, next) => {
 
 })
 
-router.post('/add', (req, res, next) => {
+router.put('/add', (req, res, next) => {
   console.log('ADD: Player');
-  PlayerModel.create(req.body, function (err, post) {
+  PlayerModel.create(req.body, function (err, put) {
     if (err) return next(err);
-    res.json(post);
+    res.json(put);
   });
 })
 
