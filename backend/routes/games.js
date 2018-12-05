@@ -1,12 +1,12 @@
 const express = require('express');
-const PlayerModel = require('../models/game');
+const GameModel = require('../models/games');
 
 const router = express.Router();
 
 
 router.get('/games', (req, res, next) => {
   console.log('GET: Games lists');
-  PlayerModel.find(function (err, post){
+  GameModel.find(function (err, post){
     if (err)
       console.log(err)
     else 

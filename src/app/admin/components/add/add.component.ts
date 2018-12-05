@@ -23,7 +23,7 @@ export class AddComponent implements OnInit {
     });
   }
 
-  addPlayer(username, rank, score, time, favorite, customer){
+  addPlayers(username, rank, score, time, favorite, customer){
     this.PlayersSerivce.addPlayers(username, rank, score, time, favorite, customer).subscribe(() => {
       this.router.navigate(['/players']);
     });

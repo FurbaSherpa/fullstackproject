@@ -22,7 +22,8 @@ import { EditComponent } from './admin/components/edit/edit.component';
 import { AddComponent } from './admin/components/add/add.component';
 import { AdminplayersComponent } from './admin/components/adminplayers/adminplayers.component';
 import { AdmingamesComponent } from './admin/components/admingames/admingames.component';
-import { PlayersService } from './players.service'
+import { PlayersService } from './players.service';
+import { JoinComponent } from './user/components/join/join.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PlayersService } from './players.service'
     EditComponent,
     AddComponent,
     AdminplayersComponent,
-    AdmingamesComponent
+    AdmingamesComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,

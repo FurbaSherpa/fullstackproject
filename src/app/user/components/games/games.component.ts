@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
 
 import { Game } from '../../../games.model';
-import { GamesService } from '../../../games.service'
+import { GamesService } from '../../../games.service';
 
 @Component({
   selector: 'app-games',
