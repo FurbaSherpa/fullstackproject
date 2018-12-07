@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GamesComponent } from './components/games/games.component';
 import { PlayersComponent } from './components/players/players.component';
-//import { JoinComponent } from './components/join/join.component';
+import { JoinComponent } from './components/join/join.component';
 import { UserComponent } from './user.component';
 
 const routes: Routes = [
@@ -15,8 +15,8 @@ const routes: Routes = [
         children: [
           { path:'games', component: GamesComponent },
           { path:'players', component: PlayersComponent },
-          { path: '', component: PlayersComponent }
-          //{ path: 'join', component: JoinComponent}
+          { path: '', component: PlayersComponent },
+          { path: 'join/:id', component: JoinComponent}
         ]
       }
     ]

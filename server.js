@@ -1,4 +1,4 @@
-const app = require('../fullstackproject/backend/app');
+const app = require('./backend/app');
 const http = require('http');
 
 

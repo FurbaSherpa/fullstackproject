@@ -1,6 +1,3 @@
-<p>
-    add works!
-  </p>
   <div>
     <br>
     <mat-card>
@@ -34,7 +31,7 @@
                       </mat-select>
                   </mat-form-field>
         <br>
-        <button mat-raised-button color="accent" (onclick)="addPlayers(username.value, rank.value,
+        <button type="submit" mat-raised-button color="accent" (click)="addPlayers(username.value, rank.value,
                 score.value, time.value, favorite.value, customer.value)" [disabled]="addForm.pristine || addForm.invalid"
                  mat-raised-button color="primary">Add</button>
         <button type="button" mat-raised-button color="accent" routerLink="/adminplayers">Back</button>

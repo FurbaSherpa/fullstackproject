@@ -33,7 +33,7 @@ export class AdminplayersComponent implements OnInit {
   }
 
   updatePlayer(id){
-    this.router.navigate([`/update/${id}`]);
+    this.router.navigate([`/adminedit/${id}`]);
   }
 
   deletePlayer(id){

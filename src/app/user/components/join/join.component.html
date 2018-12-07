@@ -1,14 +1,3 @@
-
-<mat-button-toggle-group>
-  <mat-button-toggle routerLink="/adminplayers">Players</mat-button-toggle>
-  <mat-button-toggle routerLink="/admingames">Games</mat-button-toggle>
-</mat-button-toggle-group>
-<router-outlet></router-outlet>
-
-<div align="right" style="padding-right:10px">
-  <a mat-button routerLink="/admincreate">Add Player</a>
-</div> 
-
 <div>
     <br>
     <mat-card>
@@ -43,20 +32,8 @@
             <th mat-header-cell *matHeaderCellDef>status</th>
             <td mat-cell *matCellDef="let element">{{element.status}}</td>
         </ng-container>
-  
-        <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef class="mat-column-right">Actions</th>
-            <td mat-cell *matCellDef="let element" class="mat-column-right">
-              <button mat-button color="primary" (click)="updatePlayer(element._id)">Update</button>
-              <button mat-button color="primary" (click)="deletePlayer(element._id)">Delete</button>
-            </td>
-        </ng-container>
         
-  
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
       </table>
     </mat-card>
   </div>
-  

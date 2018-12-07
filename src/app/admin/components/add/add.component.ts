@@ -25,7 +25,7 @@ export class AddComponent implements OnInit {
 
   addPlayers(username, rank, score, time, favorite, customer){
     this.PlayersSerivce.addPlayers(username, rank, score, time, favorite, customer).subscribe(() => {
-      this.router.navigate(['/players']);
+      this.router.navigate(['/adminplayers']);
     });
   }
 

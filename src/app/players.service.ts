@@ -45,6 +45,6 @@ export class PlayersService {
   }
 
   deletePlayer(id){
-    return this.http.get(`${this.uri}/playerRoutes/delete${id}`);
+    return this.http.get(`${this.uri}/playerRoutes/delete/${id}`);
   }
 }

@@ -10,7 +10,7 @@ const playerSchema = mongoose.Schema({
     customer: String,
     status:{
         type: String,
-        default: 'Open'
+        default: 'Available'
     }
 })
 

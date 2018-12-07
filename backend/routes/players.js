@@ -15,37 +15,30 @@ router.get('', (req, res, next) => {
 
 });
 
-router.get('find/:id', (req, res, next) => {
+router.get('/:id', (req, res) => {
   console.log('GET: Players by id:' + req.params.id);
-  PlayerModel.findById(req.param.id, function (err, post){
+  let idTemp = req.params.id;
+  PlayerModel.findById (idTemp, (err, player) => {
+    console.log(player)
     if (err)
       console.log(err)
     else 
-      res.json(post)
+      res.json(player)
   });
 
 })
 
-router.put('/add', (req, res, next) => {
+router.post('/add', (req, res, next) => {
   console.log('ADD: Player');
-  PlayerModel.create(req.body, function (err, put) {
-    if (err) return next(err);
-    res.json(put);
-  });
-})
-
-/**
-router.route('/update/:id', (req, res, next) => {
-  console.log('UPDATE: Player by id: ' + req.params.id);
-  PlayerModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  PlayerModel.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 })
-** */
 
-router.route('/update/:id').post((req, res) => {
-  PlayeModel.findById(req.params.id, (err, player) => {
+
+router.post('/update/:id',(req, res) => {
+  PlayerModel.findById(req.params.id, (err, player) => {
       if (!player)
           return next(new Error('Could not load Document'));
       else {
@@ -66,11 +59,13 @@ router.route('/update/:id').post((req, res) => {
   });
 });
 
-router.delete('/:id', (req, res, next) => {
+router.get('/delete/:id', (req, res) => {
   console.log('DELETE: Student by id: ' + req.params.id);
-  PlayerModel.findByIdAndRemove(req.params.id, req.body, function (err, post) {
-    if (err) return next(err);
-    res.json("Deleted");
+  PlayerModel.findByIdAndRemove({_id: req.params.id}, req.body, (err, post) => {
+    if (err)
+      res.json(err);
+    else
+      res.json("Deleted");
   });
 
 });

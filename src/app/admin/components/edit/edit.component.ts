@@ -3,9 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { MatSnackBar } from '@angular/material';
-
-import { Player } from '../../../players.model';
-import { PlayersService} from '../../../players.service';
+import { PlayersService } from '../../../players.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -17,14 +15,16 @@ export class EditComponent implements OnInit {
   player: any = {};
   updateForm: FormGroup;
 
-  constructor(private PlayersService: PlayersService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb : FormBuilder) {
+  constructor(public playersService: PlayersService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb : FormBuilder) {
+    this.id = this.route.snapshot.paramMap.get('id');    
     this.addForm();
    }
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id = params.id;
-      this.PlayersService.getPlayersByID(this.id).subscribe(res => {
+    
+    this.playersService.getPlayersByID(this.id).subscribe(res => {
         this.player = res;
+        console.log('i am resr:');
+        console.log(res);
         this.updateForm.get('username').setValue(this.player.username);
         this.updateForm.get('rank').setValue(this.player.rank);
         this.updateForm.get('score').setValue(this.player.score);
@@ -33,12 +33,11 @@ export class EditComponent implements OnInit {
         this.updateForm.get('customer').setValue(this.player.customer);
         this.updateForm.get('status').setValue(this.player.status);
       });
-    });
   }
 
   addForm(){
     this.updateForm = this.fb.group({
-      username: ['', Validators.required],
+      username: [this.player.username, Validators.required],
       rank: '',
       score:'',
       time: '',
@@ -50,7 +49,7 @@ export class EditComponent implements OnInit {
 
 
   updatePlayers(username, rank, score, time, favorite, customer, status){
-    this.PlayersService.updatePlayers(this.id, username, rank, score, time, favorite, customer, status).subscribe(() => {
+    this.playersService.updatePlayers(this.id, username, rank, score, time, favorite, customer, status).subscribe(() => {
       this.snackBar.open('Player updated sucessfully', 'OK', {
         duration: 3000
       });
