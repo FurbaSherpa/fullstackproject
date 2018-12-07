@@ -35,7 +35,13 @@ export class JoinComponent implements OnInit {
          this.joinForm.get('status').setValue(this.player.status);
        });
        this.addForm();
-       this.joinForm.disable()
+       this.joinForm.controls['username'].disable();
+       this.joinForm.controls['rank'].disable();
+       this.joinForm.controls['score'].disable();
+       this.joinForm.controls['time'].disable();
+       this.joinForm.controls['favorite'].disable();
+
+       //this.joinForm.disable()
 
   }
 
