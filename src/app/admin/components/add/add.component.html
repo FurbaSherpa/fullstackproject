@@ -13,7 +13,11 @@
         </mat-form-field>
 
         <mat-form-field class="field-full-width">
-            <input matInput formControlName="rank" placeholder="rank" #rank>
+            <mat-select placeholder="Rank" formControlName="rank" #rank>
+              <mat-option value="rank">Silver 1</mat-option>
+              <mat-option value="rank2">Silver 2</mat-option>
+              <mat-option value="rank3">Silver 3</mat-option>
+              </mat-select>
         </mat-form-field>
 
         <mat-form-field class="field-full-width">
@@ -22,9 +26,14 @@
         <mat-form-field class="field-full-width">
             <input matInput formControlName="time" placeholder="time" #time>
         </mat-form-field>
+
         <mat-form-field class="field-full-width">
-            <input matInput formControlName="favorite" placeholder="favorite" #favorite>
+            <mat-select placeholder="Favorite" formControlName="favorite" #favorite>
+              <mat-option value="fav">Counter-Strike</mat-option>
+              <mat-option value="fav">Overwatch</mat-option>
+              </mat-select>
         </mat-form-field>
+        
                 <mat-form-field class="field-full-width">
                     <mat-select placeholder="Customer" formControlName="customer" #customer>
                       <mat-option value="customer">Customer</mat-option>
